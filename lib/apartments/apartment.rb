@@ -6,11 +6,10 @@ class Apartments::Apartment
 
 
   def self.new_from_index_page(apt)
-   # binding.pry
-   area = apt.css('span.housing').text[/\d+/]  || ''
-   price = apt.css('span.result-price')[0].text || ''
-   neighborhood = apt.css('p.result-info').css('span.result-hood').text || ''
-   url = apt.css('a').attribute('href').value || ''
+   area = apt.css('span.housing').text[/\d+/] unless apt.css('span.housing').nil?
+   price = apt.css('span.result-price')[0].text unless apt.css('span.result-price')[0].nil?
+   neighborhood = apt.css('p.result-info').css('span.result-hood').text unless apt.css('p.result-info').css('span.result-hood').nil?
+   url = apt.css('a').attribute('href').value unless apt.css('a').attribute('href').nil?
    self.new(area, price, neighborhood, url)
 
   end
@@ -25,7 +24,7 @@ class Apartments::Apartment
   end
 
   def self.all
-     # binding.pry
+     binding.pry
      @@all
   end
   #
