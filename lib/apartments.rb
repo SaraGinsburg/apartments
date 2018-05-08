@@ -1,12 +1,4 @@
-require 'open-uri'
-require 'nokogiri'
-require 'pry'
+module Apartments
+end
 
-
-require_relative "./apartments/version"
-require_relative "./apartments/deal"
-require_relative "./apartments/cli"
-
-# module Apartments
-#   # Your code goes here...
-# end
+require_relative '../config/environment'

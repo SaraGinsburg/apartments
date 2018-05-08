@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby
 
-require "bundler/setup"
-require "apartments"
+require_relative  "../lib/apartments"
 
-apartments::CLI.new.call
+Apartments::CLI.new.call
