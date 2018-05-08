@@ -10,11 +10,21 @@
 
      print_apartments
 
+     # puts ""
+     # puts "What number apartment would you like to look into?"
+     # input = gets.strip.to_i
+
+     # print_apartments(input)
+
+     # apartment = Apartments::Apartment.find(input.to_i)
+     # print_apartment(apartment)
+
      puts ""
-     puts "What number apartment would you like to look into?"
+     puts "which apartment would you like to have more information about?"
      input = gets.strip
 
      apartment = Apartments::Apartment.find(input.to_i)
+
      print_apartment(apartment)
 
      puts ""
@@ -35,13 +45,13 @@
 
    def print_apartment(apartment)
      puts ""
-     puts "----------------------------- #{title} -----------------------------"
+     puts "----- #{apartment.title} -----"
      puts ""
-     puts "area in sqft:                     #{apartment.area}"
-     puts "rental price:                     #{apartment.price}"
-     puts "neighborhood:                     #{apartment.neighborhood}"
-     puts "date advertised:                  #{apartment.date}"
-     puts "picture(s) of apartment (url)     #{apartment.img}"
+     puts "bedrooms / area:            #{apartment.area}"
+     puts "rental price:               #{apartment.price}"
+     puts "neighborhood:               #{apartment.neighborhood}"
+     puts "date advertised:            #{apartment.date}"
+     puts "apartment url:              #{apartment.url}"
      puts ""
      puts "----------------------------- Description -----------------------------"
      puts "#{apartment.description}"
@@ -52,8 +62,8 @@
      puts ""
      puts "----------------------------- Apartments -----------------------------"
      puts ""
-     Apartments::Apartment.all.each_with_index(1) do |apartment, idx|
-       puts "#{idx}.    #{apartment.result-hood}                    #{apartment.price}"
+     Apartments::Apartment.all.each.with_index(1) do |apartment, idx|
+       puts "#{idx}.\t #{apartment.price}\t\t #{apartment.neighborhood}"
      end
    end
 end
