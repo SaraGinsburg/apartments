@@ -7,11 +7,24 @@
    end
 
    def start
-
      print_apartments
-
      select_apartment
+     see_another?
+   end
 
+   def select_apartment
+     puts ""
+     input = nil
+     while input.nil? || !input.between?(1,Apartments::Apartment.count)
+       puts "which apartment would you like to have more information about?"
+       input = gets.strip.to_i
+     end
+     apartment = Apartments::Apartment.find(input.to_i)
+     print_apartment(apartment)
+   end
+
+
+   def see_another?
      puts ""
      puts "Would you like to see another apartment? (Y/N)"
      input = gets.strip.upcase
@@ -24,24 +37,11 @@
      else
        puts ""
        puts "Not sure what you have in mind.."
-       start
+       see_another?
      end
    end
 
-   def select_apartment
-     puts ""
-     input = nil
-     while input.nil? || !input.between?(1,Apartments::Apartment.count)
-       puts "which apartment would you like to have more information about?"
-       input = gets.strip.to_i
-     end
 
-     apartment = Apartments::Apartment.find(input.to_i)
-
-     print_apartment(apartment)
-   end
-
-   
    def print_apartment(apartment)
      puts ""
      puts "----- #{apartment.title} -----"
