@@ -30,7 +30,7 @@ class Apartments::Apartment
   def self.count
     @@all.length
   end
-  
+
   def self.find(id)
     @@all[id - 1]
   end
@@ -41,7 +41,7 @@ class Apartments::Apartment
 
   def description
     # binding.pry
-    @description ||=  doc.css('#postingbody').text.gsub(/\P{ASCII}/,'').gsub("\n", " ").gsub("    QR Code Link to This Post ","")
+    @description ||=  doc.css('#postingbody').text.gsub(/\P{ASCII}/,'').gsub("\n", " ").gsub("    QR Code Link to This Post ","").strip
   end
 
   def date
