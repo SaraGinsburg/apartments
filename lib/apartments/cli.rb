@@ -11,8 +11,11 @@
      print_apartments
 
      puts ""
-     puts "which apartment would you like to have more information about?"
-     input = gets.strip
+     input = nil
+     while input.nil? || !input.between?(1,Apartments::Apartment.count)
+       puts "which apartment would you like to have more information about?"
+       input = gets.strip.to_i
+     end
 
      apartment = Apartments::Apartment.find(input.to_i)
 

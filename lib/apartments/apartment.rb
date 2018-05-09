@@ -27,6 +27,10 @@ class Apartments::Apartment
      @@all
   end
 
+  def self.count
+    @@all.length
+  end
+  
   def self.find(id)
     @@all[id - 1]
   end
