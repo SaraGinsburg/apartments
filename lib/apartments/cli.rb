@@ -10,15 +10,6 @@
 
      print_apartments
 
-     # puts ""
-     # puts "What number apartment would you like to look into?"
-     # input = gets.strip.to_i
-
-     # print_apartments(input)
-
-     # apartment = Apartments::Apartment.find(input.to_i)
-     # print_apartment(apartment)
-
      puts ""
      puts "which apartment would you like to have more information about?"
      input = gets.strip
@@ -63,7 +54,8 @@
      puts "----------------------------- Apartments -----------------------------"
      puts ""
      Apartments::Apartment.all.each.with_index(1) do |apartment, idx|
-       puts "#{idx}.\t #{apartment.price}\t\t #{apartment.neighborhood}"
+       spacer = apartment.price.nil? ? [' '].cycle(20).to_a.join("") : [' '].cycle(20 - apartment.price.length).to_a.join("")
+       puts "#{idx}.\t #{apartment.price} #{spacer}\t #{apartment.neighborhood}"
      end
    end
 end
