@@ -2,7 +2,7 @@
 
    def call
      Apartments::Scraper.new.make_apartments
-     puts "Welcome to the latest listing of NY area Apartments. Hit any key to continue"
+     puts "Welcome to the latest listing of NY area Apartments. Hit 'Enter' to continue"
      gets
      start
    end
