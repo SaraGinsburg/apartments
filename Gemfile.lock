@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    apartments (0.1.0)
+    apartments (0.1.1)
       nokogiri
 
 GEM
@@ -37,9 +37,9 @@ PLATFORMS
 DEPENDENCIES
   apartments!
   bundler (~> 1.16)
-  pry
+  pry (~> 0)
   rake (~> 10.0)
-  rspec (~> 3.0)
+  rspec (~> 3.7)
 
 BUNDLED WITH
    1.16.1

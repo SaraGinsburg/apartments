@@ -1,15 +1,27 @@
 # Apartments
 
-This Ruby Gem provides a CLI to view all NY apartments listed in craigslist.
-
+This gem will allow you to see the latest 120 apartments listed in craigslist for NYC metropolitan area.
+You will be prompted to enter a number corresponding to an apartment. Upon doing so, more information about this apartment will be displayed.
 
 ## Installation
 
-  $ gem install apartments
+Add this line to your application's Gemfile:
+
+```ruby
+gem 'apartments'
+```
+
+And then execute:
+
+    $ bundle
+
+Or install it yourself as:
+
+    $ gem install apartments
 
 ## Usage
 
-useful for finding focused information about the latest advertised apartments
+very useful, for getting apartment information and their corresponding url.
 
 ## Development
 
