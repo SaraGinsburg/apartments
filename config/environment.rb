@@ -1,7 +1,7 @@
 require 'pry'
 require 'nokogiri'
 require 'open-uri'
-require 'apartments'
+
 
 
 require_relative "../lib/apartments/scraper"
