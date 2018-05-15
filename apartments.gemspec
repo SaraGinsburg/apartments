@@ -3,7 +3,7 @@ require_relative "./lib/apartments/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "apartments"
-  spec.version       =  Apartments::VERSION
+  spec.version       ||=  Apartments::VERSION
   spec.authors       = ["Sara Ginsburg"]
   spec.email         = ["Sara.ginsburg.ny@gmail.com"]
   spec.description   = "Provides details on a user selected apartment in NYC"
