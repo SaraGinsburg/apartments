@@ -24,7 +24,8 @@ class Apartments::Apartment
   end
 
   def self.all
-     @@all
+     # @@all.sort_by { |apt| apt.neighborhood.downcase }
+     @@all.sort! { |a, b|  a.neighborhood <=> b.neighborhood }
   end
 
   def self.count
