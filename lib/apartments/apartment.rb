@@ -50,7 +50,7 @@ class Apartments::Apartment
   end
 
   def doc
-    @doc ||= Nokogiri::HTML(open(self.url))
+    @doc ||= Apartments::Scraper.scrape_detail(self.url)
   end
 
   def apt_url

@@ -13,4 +13,8 @@ class Apartments::Scraper
        Apartments::Apartment.new_from_index_page(apt)
     end
    end
+
+   def self.scrape_detail(url)
+     Nokogiri::HTML(open(url))
+   end
 end
